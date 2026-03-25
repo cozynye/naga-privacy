@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나갈때 - 개인정보처리방침</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif;
+            background: #0F1419;
+            color: #F1F5F9;
+            line-height: 1.7;
+        }
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 60px 24px 80px;
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .logo-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 72px;
+            height: 72px;
+            border-radius: 18px;
+            background: #1A2332;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            margin-bottom: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+        .logo-icon .door {
+            width: 32px;
+            height: 44px;
+            border-radius: 4px;
+            background: linear-gradient(180deg, #1E3A5F 0%, rgba(59, 130, 246, 0.3) 100%);
+            position: relative;
+        }
+        .logo-icon .sun {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #FBBF24;
+            top: 14px;
+            right: 14px;
+        }
+        .logo-icon .cloud {
+            position: absolute;
+            width: 20px;
+            height: 8px;
+            border-radius: 8px;
+            background: rgba(241, 245, 249, 0.8);
+            top: 30px;
+            left: 18px;
+        }
+        .logo h1 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #F1F5F9;
+        }
+        .logo p {
+            font-size: 14px;
+            color: #64748B;
+            margin-top: 4px;
+        }
+        h2 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 36px;
+            margin-bottom: 12px;
+            color: #60A5FA;
+        }
+        p, li {
+            font-size: 15px;
+            color: #94A3B8;
+            margin-bottom: 8px;
+        }
+        ul {
+            padding-left: 20px;
+            margin-bottom: 12px;
+        }
+        li strong {
+            color: #F1F5F9;
+        }
+        .divider {
+            border: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            margin: 32px 0;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 48px;
+            font-size: 13px;
+            color: #64748B;
+        }
+        .lang-switch {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .lang-switch a {
+            display: inline-block;
+            padding: 8px 20px;
+            margin: 0 4px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        .lang-switch a.active {
+            background: #60A5FA;
+            color: white;
+        }
+        .lang-switch a:not(.active) {
+            background: #1A2332;
+            color: #64748B;
+        }
+        .section-en { display: none; }
+
+        @media (prefers-color-scheme: light) {
+            body { background: #F8FAFC; color: #1E293B; }
+            .container { }
+            .logo-icon { background: #E2E8F0; border-color: #CBD5E1; }
+            .logo h1 { color: #1E293B; }
+            .logo p { color: #94A3B8; }
+            h2 { color: #3B82F6; }
+            p, li { color: #475569; }
+            li strong { color: #1E293B; }
+            .divider { border-top-color: #E2E8F0; }
+            .footer { color: #94A3B8; }
+            .lang-switch a:not(.active) { background: #E2E8F0; color: #94A3B8; }
+        }
+    </style>
+    <script>
+        function switchLang(lang) {
+            document.querySelector('.section-ko').style.display = lang === 'ko' ? 'block' : 'none';
+            document.querySelector('.section-en').style.display = lang === 'en' ? 'block' : 'none';
+            document.querySelectorAll('.lang-switch a').forEach(a => a.classList.remove('active'));
+            document.querySelector('.lang-' + lang).classList.add('active');
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <div class="logo-icon">
+                <div class="door"></div>
+                <div class="sun"></div>
+                <div class="cloud"></div>
+            </div>
+            <h1>나갈때</h1>
+            <p>나가기 전, 오늘의 날씨</p>
+        </div>
+
+        <div class="lang-switch">
+            <a onclick="switchLang('ko')" class="lang-ko active">한국어</a>
+            <a onclick="switchLang('en')" class="lang-en">English</a>
+        </div>
+
+        <!-- 한국어 -->
+        <div class="section-ko">
+            <h2>개인정보처리방침</h2>
+            <p>시행일: 2026년 3월 25일</p>
+
+            <hr class="divider">
+
+            <h2>1. 수집하는 개인정보</h2>
+            <p>나갈때 앱은 다음 정보를 처리합니다:</p>
+            <ul>
+                <li><strong>위치 정보</strong> — 현재 위치의 날씨 정보를 조회하기 위해 사용됩니다</li>
+                <li><strong>알림 토큰</strong> — 매일 아침 날씨 알림을 발송하기 위해 사용됩니다</li>
+                <li><strong>사용자 설정</strong> — 출퇴근 시간, 알림 시간, 선택한 도시 등</li>
+            </ul>
+
+            <h2>2. 개인정보의 저장</h2>
+            <p>모든 데이터는 사용자의 <strong>기기 내(AsyncStorage)</strong>에 저장됩니다.</p>
+            <ul>
+                <li>별도의 외부 서버에 개인정보를 저장하지 않습니다</li>
+                <li>위치 정보는 날씨 API 호출 시에만 일시적으로 사용되며, 서버에 저장되지 않습니다</li>
+                <li>개발자는 사용자의 위치 정보에 접근할 수 없습니다</li>
+            </ul>
+
+            <h2>3. 제3자 제공</h2>
+            <p>날씨 및 대기질 정보를 제공하기 위해 다음 외부 서비스를 이용합니다:</p>
+            <ul>
+                <li><strong>Open-Meteo (기상청 KMA 모델)</strong> — 날씨 데이터 조회 (위도/경도 전송)</li>
+                <li><strong>에어코리아</strong> — 실시간 대기질 데이터 조회 (측정소명 전송)</li>
+            </ul>
+            <p>상기 서비스 외에 개인정보를 제3자에게 제공하지 않습니다.</p>
+
+            <h2>4. 데이터 삭제</h2>
+            <ul>
+                <li>앱을 삭제하면 기기에 저장된 모든 데이터가 삭제됩니다</li>
+                <li>설정 화면에서 위치 모드를 변경하여 위치 데이터 사용을 중단할 수 있습니다</li>
+            </ul>
+
+            <h2>5. 아동 보호</h2>
+            <p>본 앱은 만 14세 미만 아동의 개인정보를 의도적으로 수집하지 않습니다.</p>
+
+            <h2>6. 변경 사항</h2>
+            <p>본 방침이 변경될 경우 앱 업데이트를 통해 안내드립니다.</p>
+
+            <h2>7. 문의</h2>
+            <p>개인정보 관련 문의: <strong>cozynye@gmail.com</strong></p>
+        </div>
+
+        <!-- English -->
+        <div class="section-en">
+            <h2>Privacy Policy</h2>
+            <p>Effective: March 25, 2026</p>
+
+            <hr class="divider">
+
+            <h2>1. Information We Collect</h2>
+            <p>Nagalttae processes the following information:</p>
+            <ul>
+                <li><strong>Location data</strong> — Used to fetch weather information for your current location</li>
+                <li><strong>Push notification token</strong> — Used to send daily morning weather notifications</li>
+                <li><strong>User preferences</strong> — Commute times, notification time, selected city, etc.</li>
+            </ul>
+
+            <h2>2. Data Storage</h2>
+            <p>All data is stored <strong>locally on your device (AsyncStorage)</strong>.</p>
+            <ul>
+                <li>We do not store personal information on external servers</li>
+                <li>Location data is used only temporarily for weather API calls and is not stored on any server</li>
+                <li>The developer cannot access your location information</li>
+            </ul>
+
+            <h2>3. Third-Party Services</h2>
+            <p>We use the following external services to provide weather and air quality information:</p>
+            <ul>
+                <li><strong>Open-Meteo (KMA model)</strong> — Weather data retrieval (latitude/longitude transmitted)</li>
+                <li><strong>AirKorea</strong> — Real-time air quality data retrieval (station name transmitted)</li>
+            </ul>
+            <p>We do not share personal information with any third parties beyond the services listed above.</p>
+
+            <h2>4. Data Deletion</h2>
+            <ul>
+                <li>Deleting the app removes all data stored on the device</li>
+                <li>You can stop location data usage by changing the location mode in Settings</li>
+            </ul>
+
+            <h2>5. Children's Privacy</h2>
+            <p>This app does not knowingly collect personal information from children under 14.</p>
+
+            <h2>6. Changes</h2>
+            <p>Any changes to this policy will be communicated through app updates.</p>
+
+            <h2>7. Contact</h2>
+            <p>Privacy inquiries: <strong>cozynye@gmail.com</strong></p>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2026 나갈때 (Nagalttae). All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
